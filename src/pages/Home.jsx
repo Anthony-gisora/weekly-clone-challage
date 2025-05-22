@@ -6,6 +6,7 @@ import SubmissionsShow from "../components/SubmissionsShow";
 import ProjectSubmission from "../components/ProjectSubmission";
 import axios from "axios";
 import NavBar from "../components/NavBar";
+import AboutMe from "../components/AboutMe";
 
 const Home = () => {
   const fetchData = async () => {
@@ -110,6 +111,7 @@ const Home = () => {
 
       {/* Final CTA */}
       <ProjectSubmission />
+      <AboutMe />
     </div>
   );
 };
