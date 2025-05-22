@@ -17,7 +17,7 @@ const StarterKitDownload = () => {
             then click and download as zip or clone into your pc to get started.
           </p>
           <a
-            href="#"
+            href="https://github.com/Anthony-gisora/vite-messenger-clone"
             className="text-white bg-[#427aa1] hover:bg-[#365e7d] px-4 py-2 inline-block rounded"
           >
             Download Starter
