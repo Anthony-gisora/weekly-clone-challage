@@ -9,7 +9,7 @@ const Home = () => {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    const deadline = new Date("2025-05-25T23:59:59");
+    const deadline = new Date("2025-05-30T23:59:59");
     const updateTimer = () => {
       const now = new Date();
       const diff = deadline - now;

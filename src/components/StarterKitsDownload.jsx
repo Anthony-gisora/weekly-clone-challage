@@ -8,7 +8,7 @@ const StarterKitDownload = () => {
         <div className="border rounded-xl p-6 shadow hover:shadow-lg transition">
           <h3 className="text-xl font-semibold mb-2">React + Tailwind</h3>
           <p className="text-sm mb-3">
-            Pre-configured Vite setup with Tailwind ready to go.{" "}
+            Pre-configured Vite setup with Tailwind ready to go.
             {"(You can use Create-react-app)"} but for this starter we provided
             Vite.On the Repo look for the
             <code className="bg-[#399918] text-[#ffff] p-[5px] rounded-[5px]">
