@@ -3,8 +3,20 @@ import HeroSection from "../components/HeroSection";
 import Screenshot from "../components/ScreenShot";
 import StarterKitDownload from "../components/StarterKitsDownload";
 import SubmissionsShow from "../components/SubmissionsShow";
+import ProjectSubmission from "../components/ProjectSubmission";
+import axios from "axios";
+import NavBar from "../components/NavBar";
 
 const Home = () => {
+  const fetchData = async () => {
+    const res = await axios.get("https://myou-server.onrender.com");
+    console.log(res);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   // Countdown Logic
   const [timeLeft, setTimeLeft] = useState("");
 
@@ -34,9 +46,14 @@ const Home = () => {
 
   return (
     <div className="bg-[#ebf2fa] text-[#064789] min-h-screen w-full">
-      {/* Hero */}
+      {/* Navbar */}
+      <NavBar />
+      {/* Spacer to prevent navbar overlap */}
+      <div className="h-[80px]" />
 
+      {/* Hero */}
       <HeroSection />
+
       {/* Countdown */}
       <section className="px-6 py-10 bg-[#427aa1] text-white text-center">
         <h2 className="text-3xl font-bold mb-2">⏳ Time Remaining</h2>
@@ -92,15 +109,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 py-16 bg-[#064789] text-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Start Building?</h2>
-        <a
-          href="#"
-          className="inline-block bg-white text-[#064789] px-8 py-3 rounded-full text-lg font-medium shadow hover:bg-[#ebf2fa] transition"
-        >
-          Submit Your Build
-        </a>
-      </section>
+      <ProjectSubmission />
     </div>
   );
 };

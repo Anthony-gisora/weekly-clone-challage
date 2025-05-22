@@ -35,7 +35,7 @@ const StarterKitDownload = () => {
             then click and download as zip or clone into your pc to get started.
           </p>
           <a
-            href="https://github.com/Anthony-gisora/weekly-clone-challage"
+            href="https://github.com/Anthony-gisora/messenger-clone-starter"
             className="text-white bg-[#427aa1] hover:bg-[#365e7d] px-4 py-2 inline-block rounded"
           >
             Download Starter
@@ -45,15 +45,18 @@ const StarterKitDownload = () => {
         <div className="border rounded-xl p-6 shadow hover:shadow-lg transition">
           <h3 className="text-xl font-semibold mb-2">PHP</h3>
           <p className="text-sm mb-3">
-            Simple starter with basic routing and layout.On the Repo look for
-            the
+            Simple starter with basic routing and layout.
+            <em className="font-extrabold">
+              Remember to change the index.html to index.php
+            </em>{" "}
+            On the Repo look for the
             <code className="bg-[#399918] text-[#ffff] p-[5px] rounded-[5px]">
               {"<>"}Code
             </code>
             then click and download as zip or clone into your pc to get started.
           </p>
           <a
-            href="#"
+            href="https://github.com/Anthony-gisora/messenger-clone-starter"
             className="text-white bg-[#427aa1] hover:bg-[#365e7d] px-4 py-2 inline-block rounded"
           >
             Download Starter

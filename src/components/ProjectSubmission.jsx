@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const HeroSection = () => {
+const ProjectSubmission = () => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    whatsapp: "",
+    github: "",
+    live: "",
   });
 
   const handleChange = (e) => {
@@ -14,27 +15,21 @@ const HeroSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form data (e.g., send to backend)
+    console.log("Project submitted:", formData);
+    // Process the submission (e.g., send to backend or email)
     setShowModal(false);
-    setFormData({ name: "", email: "", whatsapp: "" });
+    setFormData({ name: "", email: "", github: "", live: "" });
   };
 
   return (
     <>
-      <section className="px-6 py-20 text-center bg-[#064789] text-white">
-        <h1 className="text-5xl font-bold mb-4">
-          🚀 Weekly Clone App Challenge
-        </h1>
-        <p className="text-xl max-w-2xl mx-auto">
-          Ready to level up your dev skills? Clone the Facebook Messenger Web
-          App and show off your frontend game!
-        </p>
+      <section className="px-6 py-16 bg-[#064789] text-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to Start Building?</h2>
         <button
           onClick={() => setShowModal(true)}
-          className="mt-6 inline-block bg-white text-[#064789] px-8 py-3 rounded-full text-lg font-medium shadow-md hover:bg-[#ebf2fa] transition"
+          className="inline-block bg-white text-[#064789] px-8 py-3 rounded-full text-lg font-medium shadow hover:bg-[#ebf2fa] transition"
         >
-          Join the Challenge
+          Ready to Submit Your Build
         </button>
       </section>
 
@@ -42,9 +37,9 @@ const HeroSection = () => {
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#064789]">
-              Join the Challenge
-            </h2>
+            <h3 className="text-2xl font-bold mb-4 text-center text-[#064789]">
+              Submit Your Project
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
@@ -65,13 +60,21 @@ const HeroSection = () => {
                 required
               />
               <input
-                type="text"
-                name="whatsapp"
-                placeholder="WhatsApp Number"
-                value={formData.whatsapp}
+                type="url"
+                name="github"
+                placeholder="GitHub Link to Project"
+                value={formData.github}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md"
                 required
+              />
+              <input
+                type="url"
+                name="live"
+                placeholder="Live Deploy Link (optional)"
+                value={formData.live}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md"
               />
               <div className="flex justify-between mt-4">
                 <button
@@ -96,4 +99,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default ProjectSubmission;
