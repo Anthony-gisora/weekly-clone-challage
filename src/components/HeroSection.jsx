@@ -9,13 +9,24 @@ const HeroSection = () => {
         <h1 className="text-5xl font-bold mb-4">
           🚀 Weekly Clone App Challenge
         </h1>
-        <p className="text-xl max-w-2xl mx-auto">
+        <p className="text-xl max-w-2xl mx-auto mb-4">
           Ready to level up your dev skills? Clone the Facebook Messenger Web
           App and show off your frontend game!
         </p>
+        <p className="text-lg mb-6">
+          📱 Join the WhatsApp group to connect with others:{" "}
+          <a
+            href="https://chat.whatsapp.com/IDTl4fRSGqTEXasuTFT10w" // Replace with your actual number or group invite link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-[#ebf2fa] hover:text-white"
+          >
+            Click here to join
+          </a>
+        </p>
         <button
           onClick={() => setShowModal(true)}
-          className="mt-6 inline-block bg-white text-[#064789] px-8 py-3 rounded-full text-lg font-medium shadow-md hover:bg-[#ebf2fa] transition"
+          className="mt-2 inline-block bg-white text-[#064789] px-8 py-3 rounded-full text-lg font-medium shadow-md hover:bg-[#ebf2fa] transition"
         >
           Join the Challenge
         </button>
