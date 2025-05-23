@@ -84,7 +84,7 @@ const NavBar = () => {
               🚧 Coming Soon!
             </h2>
             <p className="text-[#427aa1] mb-6">
-              The community will be stable to join in 3 days.
+              The community will be stable to join as from 26th May 2025.
             </p>
             <button
               onClick={closeModal}

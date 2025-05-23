@@ -22,7 +22,7 @@ const Home = () => {
   const [timeLeft, setTimeLeft] = useState("");
 
   useEffect(() => {
-    const deadline = new Date("2025-05-30T23:59:59");
+    const deadline = new Date("2025-05-26T23:59:59");
     const updateTimer = () => {
       const now = new Date();
       const diff = deadline - now;
@@ -57,7 +57,7 @@ const Home = () => {
 
       {/* Countdown */}
       <section className="px-6 py-10 bg-[#427aa1] text-white text-center">
-        <h2 className="text-3xl font-bold mb-2">⏳ Time Remaining</h2>
+        <h2 className="text-3xl font-bold mb-2">⏳ Time Remaining </h2>
         <p className="text-2xl font-mono">{timeLeft}</p>
       </section>
 

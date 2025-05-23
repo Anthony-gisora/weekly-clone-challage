@@ -2,23 +2,6 @@ import { useState } from "react";
 
 const HeroSection = () => {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    whatsapp: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form data (e.g., send to backend)
-    setShowModal(false);
-    setFormData({ name: "", email: "", whatsapp: "" });
-  };
 
   return (
     <>
@@ -38,57 +21,32 @@ const HeroSection = () => {
         </button>
       </section>
 
-      {/* Modal */}
+      {/* Modal Message */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#064789]">
-              Join the Challenge
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+          <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-sm text-center">
+            <h2 className="text-2xl font-semibold text-[#064789] mb-3">
+              📅 Challenge Starts Soon!
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name / Alias"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                required
-              />
-              <input
-                type="text"
-                name="whatsapp"
-                placeholder="WhatsApp Number"
-                value={formData.whatsapp}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                required
-              />
-              <div className="flex justify-between mt-4">
-                <button
-                  type="submit"
-                  className="bg-[#064789] text-white px-6 py-2 rounded-md hover:bg-[#053a6b] transition"
-                >
-                  Submit
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowModal(false)}
-                  className="text-gray-600 hover:text-black transition"
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
+            <p className="text-[#427aa1] mb-4 text-lg">
+              The Clone Challenge officially begins on{" "}
+              <strong>26th May 2025</strong>.
+            </p>
+            <p className="text-[#427aa1] mb-6 text-base">
+              🏆 Top-rated submissions will receive cash rewards:
+              <br />
+              <strong>🥇 1st Place:</strong> Ksh. 1000
+              <br />
+              <strong>🥈 2nd Place:</strong> Ksh. 500
+              <br />
+              <strong>🥉 3rd Place:</strong> Ksh. 250
+            </p>
+            <button
+              onClick={() => setShowModal(false)}
+              className="bg-[#064789] text-white px-6 py-2 rounded-full hover:bg-[#053a6b] transition"
+            >
+              Got it!
+            </button>
           </div>
         </div>
       )}
